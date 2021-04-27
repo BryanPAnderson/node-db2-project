@@ -32,7 +32,7 @@ router.get("/:id", checkCarId, async (req, res) => {
 })
 
 
-router.post("/",checkCarPayload, checkVinNumberValid, checkVinNumberUnique, async (req, res, next) => {
+router.post("/",checkCarPayload, checkVinNumberValid, checkVinNumberUnique, async (req, res) => {
     try{
         cars.create(req.body)
             .then((car) => {
